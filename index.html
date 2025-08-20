@@ -51,8 +51,13 @@
         </a>
           <div class="multi-column__columns">
             <div class="multi-column__column">
-              <div class="multi-column__image-container animated-element" data-animation-hierarchy="0">
-                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-one.png" alt="Spoon with Ingredient - One" data-modal="spoon-modal">
+              <div class="multi-column__image-container animated-element"
+                data-animation-hierarchy="0"
+                data-trigger-modal
+                data-modal-title="RED"
+                data-modal-description="Red foods remind us of berries and soft fruits, so we anticipate a sweet taste."
+              >
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-one.png" alt="Spoon with Ingredient - One" />
               </div>
               <div class="multi-column__text-content">
                 <p class="multi-column__text-title">RED</p>
@@ -60,8 +65,13 @@
               </div>
             </div>
             <div class="multi-column__column">
-              <div class="multi-column__image-container animated-element" data-animation-hierarchy="1">
-                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-two.png" alt="Spoon with Ingredient - Two" data-modal="spoon-modal">
+              <div class="multi-column__image-container animated-element"
+                data-animation-hierarchy="1"
+                data-trigger-modal
+                data-modal-title="Green"
+                data-modal-description="Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours"
+              >
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-two.png" alt="Spoon with Ingredient - Two" />
               </div>
               <div class="multi-column__text-content">
                 <p class="multi-column__text-title">Green</p>
@@ -69,8 +79,13 @@
               </div>
             </div>
             <div class="multi-column__column">
-              <div class="multi-column__image-container animated-element" data-animation-hierarchy="2">
-                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-three.png" alt="Spoon with Ingredient - Three" data-modal="spoon-modal">
+              <div class="multi-column__image-container animated-element"
+                data-animation-hierarchy="2"
+                data-trigger-modal
+                data-modal-title="White"
+                data-modal-description="White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat."
+              >
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-three.png" alt="Spoon with Ingredient - Three" />
               </div>
               <div class="multi-column__text-content">
                 <p class="multi-column__text-title">White</p>
@@ -79,6 +94,16 @@
             </div>
           </div>
       </section>
+
+      <!-- Image modal -->
+      <div class="image-modal">
+        <div class="image-modal__content">
+          <span class="image-modal__close">&times;</span>
+          <h3 class="image-modal__title"></h3>
+          <p class="image-modal__description"></p>
+          <img class="image-modal__image" src="" alt="">
+        </div>
+      </div>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

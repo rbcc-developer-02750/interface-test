@@ -192,24 +192,37 @@ section {
 }
 
 // Modal
-.modal {
-  display: none;
+.image-modal {
   position: fixed;
+  opacity: 0;
+  pointer-events: none;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba($secondary-color, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.is-visible {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+  }
 
   &__content {
     position: relative;
-    margin: 5% auto;
-    padding: 20px;
+    margin: 5%;
+    padding: 40px;
     width: 90%;
-    max-width: 600px;
+    max-width: 500px;
     background-color: $primary-color;
+    color: $secondary-color;
     border-radius: 12px;
+    max-height: 80vh;
+    overflow: auto;
   }
 
   &__close {
@@ -219,12 +232,20 @@ section {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    color: #aaa;
+    color: rgba($secondary-color, 0.2);
     transition: color 0.3s ease;
 
     &:hover {
-      color: #000;
+      color: $secondary-color;
     }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    margin-bottom: 30px;
   }
 
   &__image {
@@ -305,6 +326,15 @@ section {
       width: calc(33.3% - 6.67px);
     }
   }
+
+  [data-trigger-modal] {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 @media screen and (min-width: $large) {
@@ -337,16 +367,8 @@ section {
   }
 }
 
-
 @media screen and (min-width: $xlarge) {
   body {
     padding: 0 147px;
   }
-}
-
-
-// Animations
-@keyframes drawBorder {
-  from { width: 0; }
-  to { width: 100%; }
 }
