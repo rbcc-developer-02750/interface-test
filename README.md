@@ -7,6 +7,17 @@
 - **SCSS**
 - **Vanilla JavaScript (ES6+)** - Pure JavaScript without frameworks
 
+## Responsive Layout's screen sizes
+- **Mobile**: 320px and up
+- **Tablet**: 768px and up
+- **Desktop**: 1200px and up
+
+## To Run This Project Locally:
+
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn
+
 ### Installation
 1. Clone the repository:
    ```bash
