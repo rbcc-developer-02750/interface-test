@@ -8,9 +8,10 @@
 - **Vanilla JavaScript (ES6+)** - Pure JavaScript without frameworks
 
 ## Responsive Layout's screen sizes
-- **Mobile**: 320px and up
-- **Tablet**: 768px and up
-- **Desktop**: 1200px and up
+- **Mobile**: < 480px
+- **Tablet**: < 768px
+- **Laptop**: < 1100px
+- **Desktop**: 1100px and above
 
 ## To Run This Project Locally:
 

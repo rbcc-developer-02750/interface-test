@@ -5,9 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Interface Development Test" />
     <title>Interface Development Test</title>
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="app">
+      <section class="gallery-w-text section">
+         <div class="gallery-w-text__gallery-column">
+           <div class="gallery-w-text__gallery-block">
+            <div class="gallery-w-text__gallery-image-container is-full-height">
+             <img class="gallery-w-text__gallery-image" src="./src/assets/images/cooking-pot.png" alt="Cooking Pot" />
+            </div>
+           </div>
+           <div class="gallery-w-text__gallery-block">
+              <div class="gallery-w-text__gallery-image-container">
+                <img class="gallery-w-text__gallery-image" src="./src/assets/images/tasteology.png" alt="Tasteology" />
+              </div>
+              <div class="gallery-w-text__gallery-image-container">
+                <img class="gallery-w-text__gallery-image" src="./src/assets/images/tray-with-eggs.png" alt="Tray with Eggs" />
+              </div>
+           </div>
+         </div>
+        <div class="gallery-w-text__text-column">
+          <h1 class="section-title gallery-w-text__title">WHAT DOES COOKING MEAN?</h1>
+          <div class="gallery-w-text__description rte">
+            <p>
+              Is it simply applying heat to a food product? A way of making certain food safe to eat? Or a way to create flavour and make food more appealing? This is just part of what Hervé This, the father of molecular gastronomy, has dedicated his life to finding out. We spoke to him to find out what his experiments have told him. And in the process even discovered the secret to cooking the perfect egg...
+            </p>
+            <p>
+              <h3>THE PERFECT EGG</h3>
+              <b>Keep water between 67 and 68°C for a flavourful, tender yolk</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="multi-column section">
+        <h2 class="multi-column__title section-title">Taste the Colours</h2>
+          <div class="multi-column__columns">
+            <div class="multi-column__column">
+              <div class="multi-column__image-container">
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-one.png" alt="Spoon with Ingredient - One" data-modal="spoon-modal">
+              </div>
+              <div class="multi-column__text-content">
+                <p class="multi-column__text-title">RED</p>
+                <p class="multi-column__text-description">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.</p>
+              </div>
+            </div>
+            <div class="multi-column__column">
+              <div class="multi-column__image-container">
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-two.png" alt="Spoon with Ingredient - Two" data-modal="spoon-modal">
+              </div>
+              <div class="multi-column__text-content">
+                <p class="multi-column__text-title">Green</p>
+                <p class="multi-column__text-description">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
+              </div>
+            </div>
+            <div class="multi-column__column">
+              <div class="multi-column__image-container">
+                <img class="multi-column__image" src="./src/assets/images/spoon-ingredient-three.png" alt="Spoon with Ingredient - Three" data-modal="spoon-modal">
+              </div>
+              <div class="multi-column__text-content">
+                <p class="multi-column__text-title">White</p>
+                <p class="multi-column__text-description">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+              </div>
+            </div>
+          </div>
+      </section>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

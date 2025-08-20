@@ -1,0 +1,233 @@
+// Color variables
+$primary-color: #ffffff;
+$secondary-color: #0e1414;
+$accent-color: #cf1430;
+$shadow-hover: rgba(0, 0, 0, 0.2);
+$max-width: 1700px;
+
+// Media query breakpoints
+$small: 480px;
+$medium: 768px;
+$large: 1100px;
+
+// Reset
+* {
+  margin: 0;
+}
+
+// Styling
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $primary-color;
+  background-color: $secondary-color;
+  padding: 0 20px;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.app {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $primary-color;
+  text-transform: uppercase;
+}
+
+.gallery-w-text {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+
+  &__gallery {
+    &-column,
+    &-block {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    &-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      &-container {
+        position: relative;
+        height: 0;
+        padding-bottom: 79.3%;
+      }
+    }
+  }
+
+  &__description {
+    p {
+      margin-bottom: 30px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $accent-color;
+      margin-bottom: 10px;
+    }
+
+    h3, h4, h5, h6 {
+      font-size: 15px;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+}
+
+.multi-column {
+  &__title {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 30px;
+  }
+
+  &__columns {
+    display: flex;
+    flex-flow: column;
+    gap: 45px;
+    flex-flow: wrap;
+  }
+
+  &__column {
+    width: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &-container {
+      position: relative;
+      height: 0;
+      padding-bottom: 80%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text-content {
+    padding: 0 30px;
+  }
+
+  &__text-title {
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__text-description {
+    font-weight: 300;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+  }
+}
+
+// Media queries
+@media screen and (min-width: $small) {
+  .gallery-w-text {
+    &__gallery-column {
+      flex-direction: row;
+    }
+
+    &__gallery-block {
+      width: calc(50% - 5px);
+    }
+
+    &__gallery-image-container {
+      &.is-full-height {
+        padding-bottom: 161.29%;
+      }
+    }
+  }
+
+  .multi-column {
+    &__columns {
+      flex-direction: row;
+      gap: 30px 10px;
+    }
+
+    &__column {
+      width: calc(50% - 5px);
+    }
+
+    &__image {
+      &-container {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $medium) {
+  body {
+    padding: 0 40px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .multi-column {
+    &__column {
+      width: calc(33.3% - 6.67px);
+    }
+  }
+}
+
+@media screen and (min-width: $large) {
+  body {
+    padding: 0 147px;
+    font-size: 21px;
+  }
+
+  section {
+    padding: 120px 0;
+  }
+
+  .gallery-w-text {
+    flex-flow: row;
+    gap: 30px;
+
+    &__gallery-column {
+      width: calc(67.10% - 15px);
+    }
+
+    &__text-column {
+      width: calc(32.90% - 15px);
+    }
+  }
+}
