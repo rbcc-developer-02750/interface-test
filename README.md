@@ -1,5 +1,6 @@
 # interface-test
 [View the live site here](#) TODO!!
+[Design file](https://app.zeplin.io/project/67b275ac03f16bf92448974e/screen/67b3ccf5802855e7aea93da1)
 
 ## Tech Stack
 - **Vite** - This is the build tool I used
