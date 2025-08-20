@@ -9,6 +9,7 @@ $max-width: 1700px;
 $small: 480px;
 $medium: 768px;
 $large: 1100px;
+$xlarge: 1400px;
 
 // Reset
 * {
@@ -29,6 +30,10 @@ body {
 
 section {
   padding: 40px 0;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .app {
@@ -43,8 +48,28 @@ section {
   letter-spacing: 1.5px;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 1px solid $primary-color;
   text-transform: uppercase;
+  color: $primary-color;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: $primary-color;
+    transition: width 0.6s ease;
+  }
+
+  a &:hover:after {
+    width: 0;
+  }
+
+  &.in-view:after {
+    width: 100%;
+  }
 }
 
 .gallery-w-text {
@@ -73,6 +98,19 @@ section {
         position: relative;
         height: 0;
         padding-bottom: 79.3%;
+        opacity: 0;
+        transform: translateX(-30px); /* start a bit left */
+
+        &.in-view {
+          opacity: 1;
+          transform: translateX(0); /* move into place */
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+          // Staggered delays based on index
+          &[data-animation-hierarchy="0"] { transition-delay: 300ms; }
+          &[data-animation-hierarchy="1"] { transition-delay: 600ms; }
+          &[data-animation-hierarchy="2"] { transition-delay: 900ms; }
+        }
       }
     }
   }
@@ -129,6 +167,17 @@ section {
       height: 0;
       padding-bottom: 80%;
       margin-bottom: 15px;
+      opacity: 0;
+
+      &.in-view {
+        opacity: 1;
+        transition: opacity 0.8s ease-out;
+
+        // Staggered delays based on index
+        &[data-animation-hierarchy="0"] { transition-delay: 300ms; }
+        &[data-animation-hierarchy="1"] { transition-delay: 600ms; }
+        &[data-animation-hierarchy="2"] { transition-delay: 900ms; }
+      }
     }
   }
 
@@ -190,11 +239,11 @@ section {
 
 @media screen and (min-width: $medium) {
   body {
-    padding: 0 40px;
+    padding: 0 80px;
   }
 
   section {
-    padding: 40px 0;
+    padding: 50px 0;
   }
 
   .section-title {
@@ -210,7 +259,7 @@ section {
 
 @media screen and (min-width: $large) {
   body {
-    padding: 0 147px;
+    padding: 0 60px;
     font-size: 21px;
   }
 
@@ -224,10 +273,30 @@ section {
 
     &__gallery-column {
       width: calc(67.10% - 15px);
+      height: fit-content;
+      position: sticky;
+      top: 0;
     }
 
     &__text-column {
       width: calc(32.90% - 15px);
+      height: fit-content;
+      top: 0;
+      position: sticky;
     }
   }
+}
+
+
+@media screen and (min-width: $xlarge) {
+  body {
+    padding: 0 147px;
+  }
+}
+
+
+// Animations
+@keyframes drawBorder {
+  from { width: 0; }
+  to { width: 100%; }
 }
