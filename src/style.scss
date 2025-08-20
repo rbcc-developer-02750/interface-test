@@ -172,11 +172,6 @@ section {
       &.in-view {
         opacity: 1;
         transition: opacity 0.8s ease-out;
-
-        // Staggered delays based on index
-        &[data-animation-hierarchy="0"] { transition-delay: 300ms; }
-        &[data-animation-hierarchy="1"] { transition-delay: 600ms; }
-        &[data-animation-hierarchy="2"] { transition-delay: 900ms; }
       }
     }
   }
@@ -201,6 +196,49 @@ section {
   }
 }
 
+// Modal
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &__content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    background-color: $primary-color;
+    border-radius: 12px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
 // Media queries
 @media screen and (min-width: $small) {
   .gallery-w-text {
@@ -215,6 +253,17 @@ section {
     &__gallery-image-container {
       &.is-full-height {
         padding-bottom: 161.29%;
+      }
+    }
+
+    &-image {
+      &-container {
+        &.in-view {
+          // Staggered delays based on index
+          &[data-animation-hierarchy="0"] { transition-delay: 300ms; }
+          &[data-animation-hierarchy="1"] { transition-delay: 600ms; }
+          &[data-animation-hierarchy="2"] { transition-delay: 900ms; }
+        }
       }
     }
   }
@@ -232,6 +281,13 @@ section {
     &__image {
       &-container {
         margin-bottom: 30px;
+
+        &.in-view {
+          // Staggered delays based on index
+          &[data-animation-hierarchy="0"] { transition-delay: 300ms; }
+          &[data-animation-hierarchy="1"] { transition-delay: 600ms; }
+          &[data-animation-hierarchy="2"] { transition-delay: 900ms; }
+        }
       }
     }
   }
